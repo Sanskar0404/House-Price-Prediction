@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Prediction(DELHI)</title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+
+    <form action="{{url_for('predict')}}" method="post">
+
+
+        <input type="text" name="Area" placeholder="Area of House">
+        <input type="text" name="Price sqft" placeholder="Price of Sqft">
+        <input type="text" name="Bedrooms" placeholder="No. of Bedrooms">
+        <input type="text" name="Bathrooms" placeholder="No. of Bathrooms">
+        <input type="text" name="Balcony" placeholder="No. of Balcony">
+        <input type="text" name="parking" placeholder="No. of parking">
+        <input type="text" name="Lift" placeholder="No. of Lifts">
+
+        <h2> Status </h2>
+        <select name="Status" id="g">
+            <option value="0"> Ready to Move </option>
+            <option value="1"> Under Construction </option>
+        </select>
+
+        <h3> neworold </h3>
+        <select name="neworold" id="g">
+            <option value="0"> New Property </option>
+            <option value="1"> Resale </option>
+        </select>
+
+        <h3> Furnished Status </h3>
+        <select name="Furnished Status" id="g">
+            <option value="0"> Furnished </option>
+            <option value="1"> Semi-Furnished </option>
+            <option value="2"> Unfurnished </option>
+        </select>
+
+        
+        <h3> Type of Building </h3>
+        <select name="Type of Building" id="g">
+            <option value="0"> Flat </option>
+            <option value="1"> Individual House </option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" id="sub">Prediction</button>
+        
+    </form>
+    <br>
+    <br>
+    {{prediction_text}}
+    
+</body>
+</html>
